@@ -49,8 +49,8 @@ public class BaseTest {
 		FileInputStream file = new FileInputStream(
 				System.getProperty("user.dir") + "\\src\\main\\java\\hariKrishna\\Data\\GlobalData.properties");
 		pro.load(file);
-		String browserName = pro.getProperty("browser") != null ? pro.getProperty("browser")
-				: System.getProperty("browser");
+		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
+				: pro.getProperty("browser");
 		if (browserName.contains("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browserName.contains("firefox")) {
